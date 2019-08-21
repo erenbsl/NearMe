@@ -13,6 +13,12 @@
 		B708C3B6230CE1BA00835EF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B708C3B5230CE1BA00835EF1 /* Assets.xcassets */; };
 		B708C3B9230CE1BA00835EF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B708C3B7230CE1BA00835EF1 /* LaunchScreen.storyboard */; };
 		B708C3C4230CE1BA00835EF1 /* NearMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C3C3230CE1BA00835EF1 /* NearMeTests.swift */; };
+		B708C3D0230CE1EC00835EF1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C3CF230CE1EC00835EF1 /* API.swift */; };
+		B708C3D2230CE21800835EF1 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C3D1230CE21800835EF1 /* APIConstants.swift */; };
+		B708C3D4230CE45200835EF1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C3D3230CE45200835EF1 /* APIClient.swift */; };
+		B708C3FB230D193600835EF1 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C3FA230D193600835EF1 /* Venue.swift */; };
+		B708C3FF230D1A0A00835EF1 /* SafeDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C3FE230D1A0A00835EF1 /* SafeDecoding.swift */; };
+		B708C402230D1A4D00835EF1 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C401230D1A4D00835EF1 /* Identifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,12 @@
 		B708C3BF230CE1BA00835EF1 /* NearMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B708C3C3230CE1BA00835EF1 /* NearMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeTests.swift; sourceTree = "<group>"; };
 		B708C3C5230CE1BA00835EF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B708C3CF230CE1EC00835EF1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B708C3D1230CE21800835EF1 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		B708C3D3230CE45200835EF1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		B708C3FA230D193600835EF1 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		B708C3FE230D1A0A00835EF1 /* SafeDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeDecoding.swift; sourceTree = "<group>"; };
+		B708C401230D1A4D00835EF1 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +89,9 @@
 		B708C3AD230CE1B900835EF1 /* NearMe */ = {
 			isa = PBXGroup;
 			children = (
+				B708C3FC230D198200835EF1 /* Base */,
+				B708C3F9230D192D00835EF1 /* Model */,
+				B708C3CE230CE1D600835EF1 /* Network */,
 				B708C3AE230CE1B900835EF1 /* AppDelegate.swift */,
 				B708C3B0230CE1B900835EF1 /* ViewController.swift */,
 				B708C3B2230CE1B900835EF1 /* Main.storyboard */,
@@ -94,6 +109,49 @@
 				B708C3C5230CE1BA00835EF1 /* Info.plist */,
 			);
 			path = NearMeTests;
+			sourceTree = "<group>";
+		};
+		B708C3CE230CE1D600835EF1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B708C3D1230CE21800835EF1 /* APIConstants.swift */,
+				B708C3CF230CE1EC00835EF1 /* API.swift */,
+				B708C3D3230CE45200835EF1 /* APIClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B708C3F9230D192D00835EF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B708C3FA230D193600835EF1 /* Venue.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B708C3FC230D198200835EF1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B708C400230D1A4200835EF1 /* Protocol */,
+				B708C3FD230D19EF00835EF1 /* Extension */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		B708C3FD230D19EF00835EF1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B708C3FE230D1A0A00835EF1 /* SafeDecoding.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B708C400230D1A4200835EF1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B708C401230D1A4D00835EF1 /* Identifiable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +255,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B708C3D2230CE21800835EF1 /* APIConstants.swift in Sources */,
+				B708C3FB230D193600835EF1 /* Venue.swift in Sources */,
+				B708C3D4230CE45200835EF1 /* APIClient.swift in Sources */,
 				B708C3B1230CE1B900835EF1 /* ViewController.swift in Sources */,
+				B708C3D0230CE1EC00835EF1 /* API.swift in Sources */,
+				B708C402230D1A4D00835EF1 /* Identifiable.swift in Sources */,
+				B708C3FF230D1A0A00835EF1 /* SafeDecoding.swift in Sources */,
 				B708C3AF230CE1B900835EF1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
