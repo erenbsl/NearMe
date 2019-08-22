@@ -48,11 +48,10 @@ struct APIClient: APIRequestable {
                 
                 DispatchQueue.global(qos: .background).async {
                     var result: Result<T.ResponseType, APIError>
-                    
+                
                     do {
                         let object = try decoder.decode(T.ResponseType.self, from: data)
                         result = Result.success(object)
-                        
                     } catch let error {
                         result = Result.failure(APIError.badJson(error.localizedDescription))
                     }
@@ -74,6 +73,11 @@ struct APIClient: APIRequestable {
         
         if api.httpMethod == .get {
             var queryItems = [URLQueryItem]()
+            
+            // add default params which exist in all requests
+            api.defaultParameters.forEach { key, value in
+                queryItems.append(URLQueryItem(name: key, value: "\(value)"))
+            }
             
             api.parameters.forEach { key, value in
                 queryItems.append(URLQueryItem(name: key, value: "\(value)"))

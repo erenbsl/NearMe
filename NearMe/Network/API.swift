@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// API protocol defines the module for accesing network layer
+/// API protocol defines the module for accesing network layer.
 protocol API {
     associatedtype ResponseType: Codable
     
@@ -35,6 +35,12 @@ extension API {
     
     var headers: Dictionary<String, String> {
         return defaultJSONHeader
+    }
+    
+    var defaultParameters: [String: String] {
+        return ["client_id": APIConstants.clientKey,
+                "client_secret": APIConstants.clientSecret,
+                "v": APIConstants.version]
     }
 }
 

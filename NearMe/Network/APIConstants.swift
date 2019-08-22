@@ -9,6 +9,7 @@
 import Foundation
 
 struct APIConstants {
+    static let version = "20190425"
     static let clientKey = "AQOTGG0EHO4M5WFWG34JPZE4OO5QFSIRJEJKTBAKQGMAIZHL"
     // not so secret key for this demo
     static let clientSecret = "S0AHGVQAD5E1Q1D24O5B1R3DN3DA5NJZVPWS0NKKJCA0DKDM"
