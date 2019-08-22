@@ -19,6 +19,10 @@
 		B708C3FB230D193600835EF1 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C3FA230D193600835EF1 /* Venue.swift */; };
 		B708C3FF230D1A0A00835EF1 /* SafeDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C3FE230D1A0A00835EF1 /* SafeDecoding.swift */; };
 		B708C402230D1A4D00835EF1 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C401230D1A4D00835EF1 /* Identifiable.swift */; };
+		B708C405230D265400835EF1 /* RecommendedVenues.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C404230D265400835EF1 /* RecommendedVenues.swift */; };
+		B708C408230D268F00835EF1 /* RecommendedVenuesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C407230D268F00835EF1 /* RecommendedVenuesResponse.swift */; };
+		B708C40A230D2C2F00835EF1 /* APIBaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C409230D2C2F00835EF1 /* APIBaseResponse.swift */; };
+		B708C40D230D390500835EF1 /* VenuesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C40C230D390500835EF1 /* VenuesDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		B708C3FA230D193600835EF1 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		B708C3FE230D1A0A00835EF1 /* SafeDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeDecoding.swift; sourceTree = "<group>"; };
 		B708C401230D1A4D00835EF1 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		B708C404230D265400835EF1 /* RecommendedVenues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedVenues.swift; sourceTree = "<group>"; };
+		B708C407230D268F00835EF1 /* RecommendedVenuesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedVenuesResponse.swift; sourceTree = "<group>"; };
+		B708C409230D2C2F00835EF1 /* APIBaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBaseResponse.swift; sourceTree = "<group>"; };
+		B708C40C230D390500835EF1 /* VenuesDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +97,10 @@
 		B708C3AD230CE1B900835EF1 /* NearMe */ = {
 			isa = PBXGroup;
 			children = (
+				B708C414230D42F600835EF1 /* New Group */,
 				B708C3FC230D198200835EF1 /* Base */,
 				B708C3F9230D192D00835EF1 /* Model */,
+				B708C40B230D38F500835EF1 /* DataProvider */,
 				B708C3CE230CE1D600835EF1 /* Network */,
 				B708C3AE230CE1B900835EF1 /* AppDelegate.swift */,
 				B708C3B0230CE1B900835EF1 /* ViewController.swift */,
@@ -117,6 +127,8 @@
 				B708C3D1230CE21800835EF1 /* APIConstants.swift */,
 				B708C3CF230CE1EC00835EF1 /* API.swift */,
 				B708C3D3230CE45200835EF1 /* APIClient.swift */,
+				B708C403230D264400835EF1 /* Request */,
+				B708C406230D267200835EF1 /* Response */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -152,6 +164,38 @@
 				B708C401230D1A4D00835EF1 /* Identifiable.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		B708C403230D264400835EF1 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				B708C404230D265400835EF1 /* RecommendedVenues.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		B708C406230D267200835EF1 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				B708C409230D2C2F00835EF1 /* APIBaseResponse.swift */,
+				B708C407230D268F00835EF1 /* RecommendedVenuesResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		B708C40B230D38F500835EF1 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				B708C40C230D390500835EF1 /* VenuesDataProvider.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		B708C414230D42F600835EF1 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +303,13 @@
 				B708C3FB230D193600835EF1 /* Venue.swift in Sources */,
 				B708C3D4230CE45200835EF1 /* APIClient.swift in Sources */,
 				B708C3B1230CE1B900835EF1 /* ViewController.swift in Sources */,
+				B708C408230D268F00835EF1 /* RecommendedVenuesResponse.swift in Sources */,
+				B708C405230D265400835EF1 /* RecommendedVenues.swift in Sources */,
+				B708C40D230D390500835EF1 /* VenuesDataProvider.swift in Sources */,
 				B708C3D0230CE1EC00835EF1 /* API.swift in Sources */,
 				B708C402230D1A4D00835EF1 /* Identifiable.swift in Sources */,
 				B708C3FF230D1A0A00835EF1 /* SafeDecoding.swift in Sources */,
+				B708C40A230D2C2F00835EF1 /* APIBaseResponse.swift in Sources */,
 				B708C3AF230CE1B900835EF1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
