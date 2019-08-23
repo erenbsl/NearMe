@@ -52,7 +52,10 @@ class VenueListViewController: UIViewController {
     }
     
     func loadVenues(isNextBatch: Bool) {
-        guard let location = locationManager.location else { return }
+        guard let location = locationManager.location else {
+            tableView.refreshControl?.endRefreshing()
+            return
+        }
         viewModel.loadVenues(near: location.coordinate, keyword: filterViewController.viewModel.keyword, radius: filterViewController.viewModel.radius) { [weak self] (indexes, errorMessage) in
             guard let self = self else { return }
             
@@ -68,6 +71,9 @@ class VenueListViewController: UIViewController {
                         self.tableView.insertRows(at: indexPaths, with: .bottom)
                     })
                 }
+            } else if let errorMessage = errorMessage {
+                let alert = UIAlertController.nm_generalErrorAlert(errorMessage: errorMessage)
+                self.present(alert, animated: true)
             }
         }
     }
@@ -113,6 +119,13 @@ extension VenueListViewController: UITableViewDataSource {
     }
 }
 
+extension VenueListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        // go to details page with map etc.
+    }
+}
+
 extension VenueListViewController: UIAdaptivePresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
@@ -122,14 +135,6 @@ extension VenueListViewController: UIAdaptivePresentationControllerDelegate {
 extension VenueListViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         loadVenues(isNextBatch: false)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
     }
 }
 

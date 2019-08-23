@@ -17,7 +17,6 @@
 		B708C3D2230CE21800835EF1 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C3D1230CE21800835EF1 /* APIConstants.swift */; };
 		B708C3D4230CE45200835EF1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C3D3230CE45200835EF1 /* APIClient.swift */; };
 		B708C3FB230D193600835EF1 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C3FA230D193600835EF1 /* Venue.swift */; };
-		B708C3FF230D1A0A00835EF1 /* SafeDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C3FE230D1A0A00835EF1 /* SafeDecoding.swift */; };
 		B708C402230D1A4D00835EF1 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C401230D1A4D00835EF1 /* Identifiable.swift */; };
 		B708C405230D265400835EF1 /* RecommendedVenues.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C404230D265400835EF1 /* RecommendedVenues.swift */; };
 		B708C408230D268F00835EF1 /* RecommendedVenuesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708C407230D268F00835EF1 /* RecommendedVenuesResponse.swift */; };
@@ -34,6 +33,7 @@
 		B755B0ED230FDF2200DB85EE /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B755B0EB230FDF2200DB85EE /* FilterViewController.xib */; };
 		B755B0EF230FE27800DB85EE /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755B0EE230FE27800DB85EE /* FilterViewModel.swift */; };
 		B755B0F1230FF09900DB85EE /* Venues.json in Resources */ = {isa = PBXBuildFile; fileRef = B755B0F0230FF09900DB85EE /* Venues.json */; };
+		B755B0F3230FF6A700DB85EE /* UIAlertController+NearMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755B0F2230FF6A700DB85EE /* UIAlertController+NearMe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +61,6 @@
 		B708C3D1230CE21800835EF1 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		B708C3D3230CE45200835EF1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		B708C3FA230D193600835EF1 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
-		B708C3FE230D1A0A00835EF1 /* SafeDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeDecoding.swift; sourceTree = "<group>"; };
 		B708C401230D1A4D00835EF1 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		B708C404230D265400835EF1 /* RecommendedVenues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedVenues.swift; sourceTree = "<group>"; };
 		B708C407230D268F00835EF1 /* RecommendedVenuesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedVenuesResponse.swift; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		B755B0EB230FDF2200DB85EE /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
 		B755B0EE230FE27800DB85EE /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		B755B0F0230FF09900DB85EE /* Venues.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Venues.json; sourceTree = "<group>"; };
+		B755B0F2230FF6A700DB85EE /* UIAlertController+NearMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+NearMe.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +179,7 @@
 		B708C3FD230D19EF00835EF1 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				B708C3FE230D1A0A00835EF1 /* SafeDecoding.swift */,
+				B755B0F2230FF6A700DB85EE /* UIAlertController+NearMe.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -366,8 +366,8 @@
 				B708C3D0230CE1EC00835EF1 /* API.swift in Sources */,
 				B708C402230D1A4D00835EF1 /* Identifiable.swift in Sources */,
 				B755B0EC230FDF2200DB85EE /* FilterViewController.swift in Sources */,
+				B755B0F3230FF6A700DB85EE /* UIAlertController+NearMe.swift in Sources */,
 				B755B0E5230E7A5100DB85EE /* AsyncImageView.swift in Sources */,
-				B708C3FF230D1A0A00835EF1 /* SafeDecoding.swift in Sources */,
 				B708C40A230D2C2F00835EF1 /* APIBaseResponse.swift in Sources */,
 				B755B0E1230E741500DB85EE /* VenuListCellModel.swift in Sources */,
 				B708C3AF230CE1B900835EF1 /* AppDelegate.swift in Sources */,

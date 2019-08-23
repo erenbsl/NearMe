@@ -37,6 +37,10 @@ class NearMeTests: XCTestCase {
                 
                 let cellModel = venueViewModel.cellModel(at: 5)
                 XCTAssertNotNil(cellModel)
+                XCTAssertNotNil(cellModel?.address)
+                XCTAssertNotNil(cellModel?.iconUrl)
+                XCTAssertNotNil(cellModel?.distanceText)
+                XCTAssertNotNil(cellModel?.title)
                 
                 let cellModel2 = venueViewModel.cellModel(at: 11)
                 XCTAssertNil(cellModel2)
