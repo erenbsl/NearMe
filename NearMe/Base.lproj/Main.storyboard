@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Venue List View Controller-->
+        <!--Recommended-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="VenueListViewController" customModule="NearMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,7 +36,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6pY-Be-qrh"/>
+                    <navigationItem key="navigationItem" title="Recommended" id="6pY-Be-qrh">
+                        <barButtonItem key="rightBarButtonItem" title="Refine" id="rUj-2t-VvM">
+                            <color key="tintColor" red="1" green="0.56862745100000001" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="filterButtonTapped:" destination="BYZ-38-t0r" id="ewl-Dj-WgO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="0eE-Lw-dg8" id="lz6-nH-b5O"/>
                     </connections>

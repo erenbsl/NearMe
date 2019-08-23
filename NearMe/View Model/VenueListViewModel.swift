@@ -12,10 +12,16 @@ import CoreLocation
 class VenueListViewModel {
     
     private let dataProvider: VenuesDataProvider
-    private var venues: [Venue] = []
+    var venues: [Venue] = []
     var shouldLoadAgain: Bool = true
     var offset: Int = 0
     let limit = 30
+    
+    var filterViewModel: FilterViewModel {
+        // create the default filter
+        let filter = Filter(keyword: nil, radius: 1000)
+        return FilterViewModel(filter: filter)
+    }
     
     var numberOfVenues: Int {
         return venues.count

@@ -17,6 +17,15 @@ class VenueListViewController: UIViewController {
     let locationManager = CLLocationManager()
     var isFirstBatch: Bool = true
     
+    lazy var filterViewController: FilterViewController = {
+        let filterVC = FilterViewController(nibName: "FilterViewController", bundle: nil)
+        filterVC.modalPresentationStyle = .popover
+        filterVC.viewModel = viewModel.filterViewModel
+        filterVC.preferredContentSize = CGSize(width: 300, height: 300)
+        
+        return filterVC
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +53,7 @@ class VenueListViewController: UIViewController {
     
     func loadVenues(isNextBatch: Bool) {
         guard let location = locationManager.location else { return }
-        viewModel.loadVenues(near: location.coordinate, radius: 1000) { [weak self] (indexes, errorMessage) in
+        viewModel.loadVenues(near: location.coordinate, keyword: filterViewController.viewModel.keyword, radius: filterViewController.viewModel.radius) { [weak self] (indexes, errorMessage) in
             guard let self = self else { return }
             
             self.tableView.refreshControl?.endRefreshing()
@@ -54,7 +63,10 @@ class VenueListViewController: UIViewController {
                     self.isFirstBatch = false
                 } else {
                     let indexPaths = indexes.map { IndexPath(row: $0, section: 0) }
-                    self.tableView.insertRows(at: indexPaths, with: .automatic)
+                    self.tableView.performBatchUpdates({
+                        self.tableView.setContentOffset(self.tableView.contentOffset, animated: false)
+                        self.tableView.insertRows(at: indexPaths, with: .bottom)
+                    })
                 }
             }
         }
@@ -63,6 +75,20 @@ class VenueListViewController: UIViewController {
     @objc func refreshTriggered() {
         viewModel.reset()
         loadVenues(isNextBatch: false)
+    }
+    
+    
+    @IBAction func filterButtonTapped(_ sender: UIBarButtonItem) {
+        filterViewController.presentationController?.delegate = self
+        filterViewController.popoverPresentationController?.barButtonItem = sender
+        
+        filterViewController.updateHandler = { [weak self] keyword, radius in
+            guard let self = self else { return }
+            self.viewModel.reset()
+            self.loadVenues(isNextBatch: false)
+        }
+        
+        self.present(filterViewController, animated: true)
     }
 }
 
@@ -84,6 +110,12 @@ extension VenueListViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension VenueListViewController: UIAdaptivePresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
 }
 
