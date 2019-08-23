@@ -32,12 +32,20 @@ struct RecommendedVenuesResponse: Codable {
             self.type = try container.decode(String.self, forKey: .type)
             self.name = try container.decode(String.self, forKey: .name)
             
-            let itemContainer = try container.nestedContainer(keyedBy: ItemCodingKeys.self, forKey: .items)
-            self.items = try itemContainer.decode([Venue].self, forKey: .venue)
+            var itemUnkeyedContainer = try container.nestedUnkeyedContainer(forKey: .items)
+            var items = [Venue]()
+            
+            while !itemUnkeyedContainer.isAtEnd {
+                let itemContainer = try itemUnkeyedContainer.nestedContainer(keyedBy: ItemCodingKeys.self)
+                let venue = try itemContainer.decode(Venue.self, forKey: .venue)
+                items.append(venue)
+            }
+            self.items = items
         }
     }
     
     
     // MARK: Properties
+    let totalResults: Int
     let groups: [Group]
 }

@@ -23,4 +23,8 @@ struct Response<T: Codable>: Codable {
 struct APIResponseMeta: Codable {
     let code: Int
     let requestId: String
+    
+    var isSuccess: Bool {
+        return code == 200
+    }
 }
